@@ -59,7 +59,7 @@ def analyze_ssl(host, context):
     try:
         from urllib.request import urlopen
     except ImportError:
-        from urllib2 import urlopen
+        import urllib2
 
     api_url = 'https://api.ssllabs.com/api/v3/'
     while True:
