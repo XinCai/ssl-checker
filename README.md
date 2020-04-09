@@ -154,16 +154,15 @@ No problem. Pass `-s/--socks` argument to the script with `HOST:PORT` format to 
 By passing `-a/--analyze` to the script, it will scan the certificate for security issues and vulnerabilities. It will also mark a grade for the certificate. **This will take more time to finish.**
 
 ```
-:~/ssl-checker$ ./ssl_checker.py -H  narbeh.org:443 -a
+:~/ssl-checker$ ./ssl_checker.py -H  xxx.com:443 -a
 +---------------------+
 | Analyzing 1 host(s) |
 +---------------------+
 
 Warning: -a/--analyze is enabled. It takes more time...
 
-	[+] narbeh.org
-
-		Issued domain: narbeh.org
+	[+] xxx.com
+		Issued domain: xxx.com
 		Issued to: None
 		Issued by: Let's Encrypt (US)
 		Valid from: 2018-04-21
@@ -193,8 +192,8 @@ Warning: -a/--analyze is enabled. It takes more time...
 Example only with the `-j/--json` argument which shows the JSON only. Perfect for piping to another tool.
 
 ```
-:~/ssl-checker$ ./ssl_checker.py -j -H  narbeh.org:443 test.com
-{"narbeh.org": {"issued_to": "narbeh.org", "cert_sans": "DNS:narbeh.org", "valid_till": "2019-12-26", "valid_from": "2019-09-27", "issuer_ou": null, "days_left": 25, "cert_ver": 2, "tcp_port": 443, "cert_alg": "sha256WithRSAEncryption", "issued_o": null, "cert_exp": false, "cert_sha1": "05:52:4E:89:1E:98:1D:40:C1:41:F4:DD:F7:51:86:20:27:CF:E7:7F", "issuer_c": "US", "issuer_cn": "Let's Encrypt Authority X3", "issuer_o": "Let's Encrypt", "validity_days": 90, "cert_sn": 293690843427182569577385918507679703674563}}
+:~/ssl-checker$ ./ssl_checker.py -j -H  xxx.com:443 test.com
+{"xxx.com": {"issued_to": "xxx.com", "cert_sans": "DNS:xxx.com", "valid_till": "2019-12-26", "valid_from": "2019-09-27", "issuer_ou": null, "days_left": 25, "cert_ver": 2, "tcp_port": 443, "cert_alg": "sha256WithRSAEncryption", "issued_o": null, "cert_exp": false, "cert_sha1": "05:52:4E:89:1E:98:1D:40:C1:41:F4:DD:F7:51:86:20:27:CF:E7:7F", "issuer_c": "US", "issuer_cn": "Let's Encrypt Authority X3", "issuer_o": "Let's Encrypt", "validity_days": 90, "cert_sn": 293690843427182569577385918507679703674563}}
 ```
 
 
@@ -203,8 +202,8 @@ CSV export is also easy. After running the script with `-c/--csv` argument and s
 
 ```
 :~/ssl-checker$ cat domain.csv 
-narbeh.org
-issued_to,narbeh.org
+xxx.com
+issued_to,xxx.com
 valid_till,2018-07-20
 valid_from,2018-04-21
 issuer_ou,None
